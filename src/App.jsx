@@ -1,72 +1,93 @@
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import Projects from './components/Projects'
+import Skills from './components/Skills'
+import Contact from './components/Contact'
+
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      {/* Subtle pattern overlay */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.05),transparent_50%)]"></div>
+    <div className="min-h-screen bg-slate-950 text-slate-100">
+      <Navbar />
+      <Hero />
+      <About />
+      <Projects />
+      <Skills />
+      <CTA />
+      <Contact />
+      <Footer />
+    </div>
+  )
+}
 
-      <div className="relative min-h-screen flex items-center justify-center p-8">
-        <div className="max-w-2xl w-full">
-          {/* Header with Flames icon */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center justify-center mb-6">
-              <img
-                src="/flame-icon.svg"
-                alt="Flames"
-                className="w-24 h-24 drop-shadow-[0_0_25px_rgba(59,130,246,0.5)]"
-              />
-            </div>
-
-            <h1 className="text-5xl font-bold text-white mb-4 tracking-tight">
-              Flames Blue
-            </h1>
-
-            <p className="text-xl text-blue-200 mb-6">
-              Build applications through conversation
+function About() {
+  return (
+    <section id="about" className="relative py-24 bg-slate-950">
+      <div className="absolute inset-0 bg-[radial-gradient(600px_200px_at_0%_10%,rgba(56,189,248,0.12),transparent),radial-gradient(600px_200px_at_100%_10%,rgba(167,139,250,0.12),transparent)]" />
+      <div className="relative mx-auto max-w-5xl px-6">
+        <div className="grid gap-10 lg:grid-cols-3">
+          <div className="lg:col-span-2">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white">About Me</h2>
+            <p className="mt-3 text-slate-300/85 leading-relaxed">
+              I’m a computer science student focused on building polished, performant products. My interests span
+              full‑stack web, AI/ML, systems, and developer tooling. I enjoy turning complex problems into simple,
+              delightful experiences with clean design and smooth interactions.
+            </p>
+            <p className="mt-3 text-slate-300/85 leading-relaxed">
+              Recently, I’ve explored generative AI apps, real‑time collaboration, and scalable APIs. Outside of coding,
+              I mentor peers, contribute to open source, and experiment with 3D/creative coding.
             </p>
           </div>
-
-          {/* Instructions */}
-          <div className="bg-slate-800/50 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-8 shadow-xl mb-6">
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                1
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Describe your idea</h3>
-                <p className="text-blue-200/80 text-sm">Use the chat panel on the left to tell the AI what you want to build</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                2
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Watch it build</h3>
-                <p className="text-blue-200/80 text-sm">Your app will appear in this preview as the AI generates the code</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                3
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Refine and iterate</h3>
-                <p className="text-blue-200/80 text-sm">Continue the conversation to add features and make changes</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Footer */}
-          <div className="text-center">
-            <p className="text-sm text-blue-300/60">
-              No coding required • Just describe what you want
-            </p>
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+            <h3 className="text-white font-semibold">Highlights</h3>
+            <ul className="mt-3 space-y-2 text-slate-200/90 text-sm">
+              <li>• Hackathon finalist (x3)</li>
+              <li>• Published research poster on ML interpretability</li>
+              <li>• Teaching assistant for Data Structures</li>
+              <li>• Open‑source contributor</li>
+            </ul>
           </div>
         </div>
       </div>
-    </div>
+    </section>
+  )
+}
+
+function CTA() {
+  return (
+    <section className="relative py-20">
+      <div className="absolute inset-0 bg-[radial-gradient(600px_200px_at_50%_-10%,rgba(34,197,94,0.12),transparent)]" />
+      <div className="relative mx-auto max-w-6xl px-6">
+        <div className="rounded-2xl border border-white/10 bg-gradient-to-b from-white/5 to-white/[0.03] p-8 text-center">
+          <h3 className="text-2xl sm:text-3xl font-semibold text-white">Looking for Spring/Summer internships</h3>
+          <p className="mt-2 text-slate-300/85">I love collaborating with teams that care about craft and impact.</p>
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
+            <a href="#projects" className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-blue-500 to-indigo-500 px-5 py-3 text-white font-medium shadow-lg shadow-blue-500/25">
+              See my work
+            </a>
+            <a href="#contact" className="inline-flex items-center justify-center rounded-lg border border-white/10 px-5 py-3 text-slate-200 hover:bg-white/10 transition">
+              Contact me
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function Footer() {
+  return (
+    <footer className="relative border-t border-white/10 bg-slate-950/80">
+      <div className="mx-auto max-w-7xl px-6 py-10 text-sm text-slate-400">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p>© {new Date().getFullYear()} CS Portfolio. All rights reserved.</p>
+          <div className="flex items-center gap-4">
+            <a href="#home" className="hover:text-white">Top</a>
+            <a href="#projects" className="hover:text-white">Projects</a>
+            <a href="#contact" className="hover:text-white">Contact</a>
+          </div>
+        </div>
+      </div>
+    </footer>
   )
 }
 
